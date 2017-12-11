@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+	<ul>
+		<li> <span> <a href="Hardik_Resume.pdf"></a> Hardik Resume Pdf file </span> </li>
+		<li> <span> <a href="Hardik_Resume.docx"></a> Hardik Resume Word file</span> </li>
+		<li> <span> <a href="Hardik_Resume.txt"></a> Hardik Resume Note file</span> </li>
+		<li> <span> <a href="Resume.docx"></a> </span> Resume Word file </li>
+		<li> <span> <a href="Resume.txt"></a> </span> Resume Note file</li>
+		<li> <span> <a href="Resume.pdf"></a> </span> Resume Pdf file </li>
+
+	</ul>
+</div>
+
+<script>
+	$(document).ready(function () {
+
+		$("a").each(function hell(){
+
+			var href = $(this).attr('href');
+			var get = href.split('.');
+		
+			console.log(get[1]);
+			//console.log(x.exec(href));
+
+			if (get[1] == "pdf") {
+				//console.log("hello");
+				$(this).prepend("<img src='pdf.jpg' height=30px; width=30px;>");
+			}
+			else if (get[1] == 'docx') {
+				$(this).prepend("<img src='word.png' height=30px; width=30px;>");
+				//console.log("hi");
+			}
+			else if (get[1] == 'txt') {
+				$(this).prepend("<img src='notepad.jpg' height=30px; width=30px;>");	
+				//console.log("jgjh");
+				}
+	})
+		
+	})
+</script>
+</body>
+</html>

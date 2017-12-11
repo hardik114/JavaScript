@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style>
+		#main{
+			height: 600px;
+			width: 600px;
+			border: 1px solid black;
+			position: relative;
+		}
+		#second{
+			height: 80px;
+			width: 300px;
+			margin-left: 270px;
+			border: 1px solid black;
+			border-radius: 3px;
+			position: absolute;
+			background-color: lightblue;
+		}
+		img{
+			width: 20px;
+			height: 20px;
+		}
+		span{
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	Password:
+	<input type="password" id="pass" style="margin: 10px;">
+
+	<div id="second">
+		<img src="wrongimg.jpg" id="w1"><span>Must be atlist 9 characters</span><br>
+		<img src="wrongimg.jpg" id="w2"><span>Must contain an upper-case,a number and cannot begin or end with space</span>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		$("#pass").keyup(function () {
+			var p= $("#pass").val();
+			var reg= /(?=.*[A-z])(?=.*[0-9])/;
+
+		if (p.length == 9) {$("#w1").attr('src','rightimage.jpg')}
+			
+		if (p.match(reg)!=null) {$("#w2").attr('src','rightimage.jpg')}
+		})
+		
+	})
+
+
+</script>
+</body>
+</html>

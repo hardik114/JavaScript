@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<input type="text" placeholder="Enter city name" id="city">
+
+<button>Submit</button>
+<p id="f"></p>
+<p id="s"></p>
+
+<script>
+	$(document).ready(function () {
+		$("button").click(function(){
+			$.get("http://api.openweathermap.org/data/2.5/weather?q="+$("#city").val()+"&appid=a34652670ff5552e3d8bf52d7f6782a7", function (data) {
+				$("#f").html('weather:' + data.weather[0]['main']);
+				$("#s").html('temp:'+ data['main']['temp']);
+				
+			} )
+		})
+	})
+</script>
+
+</body>
+</html>

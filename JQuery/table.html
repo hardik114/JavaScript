@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+	</style>
+</head>
+<body>
+<table style="width:100%">
+  <tr>
+    <th>num1</th>
+    <th>op</th> 
+    <th>num2</th>
+    <th>result</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>+</td>
+    <td>50</td>
+    <td></td>
+
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>-</td>
+    <td>94</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>160</td>
+    <td>/</td>
+    <td>80</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>*</td>
+    <td>80</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>200</td>
+    <td>%</td>
+    <td>80</td>
+    <td></td>
+  </tr>
+</table>
+
+<script>
+	$(document).ready(function(){
+		$("tr").each(function(){
+			var x = parseInt($(this).children().eq(0).html());
+			var y = $(this).children().eq(1).html();
+			var z = parseInt($(this).children().eq(2).html());
+			var a =$(this).children().eq(3);
+
+			if (y == "*") { a.html(x * z);}
+			else if (y == "+") { a.html(x + z);}
+			else if (y == "/") { a.html(x / z);}
+			else if (y == "-") { a.html(x - z);}
+			else if (y == "%") { a.html(x % z);}
+		});
+	});
+/*
+   var x = parseInt($(this).children().eq(0).html());           
+            var y = $(this).children().eq(1).html();
+            var z = parseInt($(this).children().eq(2).html());           
+            //var r = $(this).children().eq(3);
+           
+            if (y == "*") { $(this).children().eq(3).html(x * z);}
+            else if  (y == "+") { $(this).children().eq(3).html( x + z);}
+            else if (y == "/") { $(this).children().eq(3).html(x / z);}
+            else if (y == "-") { $(this).children().eq(3).html(x - z);}   
+
+	$(document).ready(function() {
+	
+		$("tr").each(function(){
+			var a= parseInt($("td:nth-of-type(1)").html());
+			var b= parseInt($("td:nth-of-type(3)").html());
+			var x= $("td:nth-of-type(2)").html();
+			var y= 
+			if (x == "+") {$(this).html(a + b);}
+			else if (x == "-") {$("td:nth-of-type(4)").html(a - b);}
+			else if (x == "*") {$("td:nth-of-type(4)").html(a * b);}
+			else if (x == "/") {$("td:nth-of-type(4)").html(a / b);}
+			
+		});
+		
+	});*/
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<input type="checkbox" name=""> select
+<input type="checkbox" name="">
+<input type="checkbox" name="">
+<input type="checkbox" name="">
+<input type="checkbox" name="">
+<input type="checkbox" name="">
+<input type="checkbox" name="">
+
+<script>
+var x= false;
+	$(document).ready(function () {
+		$("input:first-of-type").click(function(){
+		if (x==false) {
+			$("input").prop('checked',true);
+		x=true;}
+		else{
+			$("input").prop('checked',false);
+		x=false;}
+		})
+	})
+
+</script>
+
+</body>
+</html>

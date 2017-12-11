@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style>
+		img{
+			width: 500px;
+			height: 500px; 
+			margin-left:200px; 
+			margin-top: 50px;
+		}
+		button{
+			margin:10px; 
+		}
+	</style>
+</head>
+<body>
+
+<button>Previous</button>
+<img src="image_1.jpg" alt="image-1">
+<button>Next</button>
+
+
+<script>
+	var count = 1;
+	$(document).ready(function() {
+		$("button:nth-of-type(2)").click(function next(){
+			if (count==7) {count=1;}
+			else{
+				$("img").attr("src","image_"+count+".jpg");
+				count++;
+			}	
+		})
+
+		$("button:first-of-type").click(function previous(){
+			count--;
+			if (count==0) { count=7;} 
+			else {
+				$("img").attr("src","image_"+count+".jpg");
+				}
+		})
+	})
+</script>
+
+</body>
+</html>

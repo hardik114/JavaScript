@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<style>
+		.select{margin:10px; };
+		.inp{margin:10px; };
+		.dlbtn{margin:10px; };
+		.editbtn{margin:10px;};
+	</style>
+
+</head>
+<body>
+
+<div style="height: 400px; width: 400px;" id="main">
+
+	<h2 style="margin:10px;">To Do List...</h2>
+
+	<input type="text" name="" style="margin:10px" id="ipadd">
+	<button style="margin:10px; " id="add">ADD</button><br>
+
+	<button style="margin:10px; " id="all"> All </button> 
+	<button style="margin:10px; " id="comlete">Complete</button>
+	<button style="margin:10px; " id="incomplete">Incomplete</button><br>
+
+
+	<input type="checkbox" class="select"><input type="text" value="bcd" class="inp" disabled><button class="dlbtn" >X</button>
+	<button class="editbtn">Edit</button><br>
+
+	<input type="checkbox" class="select" ><input type="text" value="abc" class="inp" disabled><button class="dlbtn">X</button>
+	<button class="editbtn">Edit</button><br>
+
+	<input type="checkbox" class="select" ><input type="text" value="abd" class="inp" disabled><button class="dlbtn">X</button>
+	<button class="editbtn">Edit</button><br>
+
+	<input type="checkbox" class="select" ><input type="text" value="ac" class="inp" disabled><button class="dlbtn">X</button>
+	<button class="editbtn">Edit</button><br>
+
+</div>
+
+
+
+<script>
+var x =false;
+	$(document).ready(function () {
+		$("#add").click(function Add(){
+			var x =$("#ipadd").val();
+			//console.log(x);
+			$("#main").append('<input type="checkbox" class="select">')
+					  .append('<input type="text" value='+x+' class="inp" disabled>')
+					  .append('<button class="dlbtn">X</button>')
+					  .append('<button class="editbtn">Edit</button>')
+					  .append('<br>');
+
+				$("#all").click(function Allcheck(){
+						if (x==false) {
+							$(".select").prop('checked',true);
+						x=true;}
+						else{
+							$(".select").prop('checked',false);
+						x=false;}
+				})
+
+				$("#comlete").click(function Complete() {
+					$(".select").each(function() {
+						if ($(this).prop('checked')== true) {$(this).next().css('background-color','green');	}
+					})
+				})
+
+				$("#incomplete").click(function Incomplete() {
+					$(".select").each(function() {
+						if ($(this).prop('checked')== false) {$(this).next().css('background-color','red');	}
+					})
+				})
+
+				$(".dlbtn").click(function Delete() {
+					$(this).prev().prev().remove()
+					$(this).prev().remove()
+					$(this).next().remove()
+					$(this).remove()
+				})
+
+				$(".editbtn").click(function Edit() {
+					$(this).prev().prev().removeAttr("disabled");
+				})
+				$(".inp").blur(function edt() {
+					$(this).attr('disabled','disabled');
+			})
+
+	
+		/*$("#all").click(function Allcheck(){
+				if (x==false) {
+					$(".select").prop('checked',true);
+				x=true;}
+				else{
+					$(".select").prop('checked',false);
+				x=false;}
+		})
+
+		$("#comlete").click(function Complete() {
+			$(".select").each(function() {
+				if ($(this).prop('checked')== true) {$(this).next().css('background-color','green');	}
+			})
+		})
+
+		$("#incomplete").click(function Incomplete() {
+			$(".select").each(function() {
+				if ($(this).prop('checked')== false) {$(this).next().css('background-color','red');	}
+			})
+		})
+
+		$(".dlbtn").click(function Delete() {
+			$(this).prev().prev().remove()
+			$(this).prev().remove()
+			$(this).next().remove()
+			$(this).remove()
+		})
+
+		$(".editbtn").click(function Edit() {
+			$(this).prev().prev().removeAttr("disabled");
+		})
+		$(".inp").blur(function edt() {
+			$(this).attr('disabled','disabled');
+		})
+		$(".inp").dblclick(function() {
+			$(this).prop('disabled', false);
+		})*/
+	})
+})
+
+
+
+
+</script>
+</body>
+</html>

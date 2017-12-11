@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>num1</th>
+    <th>op</th> 
+    <th>num2</th>
+    <th>result</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td> + </td>
+    <td>50</td>
+    <td></td>
+
+  </tr>
+  <tr>
+    <td>100</td>
+    <td> - </td>
+    <td>94</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>160</td>
+    <td> / </td>
+    <td>80</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td> * </td>
+    <td>80</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td> + </td>
+    <td>80</td>
+    <td></td>
+  </tr>
+</table>
+
+<script>
+	$(document).ready(function() {
+		$("tr").each(function(){
+			var x = parseInt($("td:nth-of-type(1)").html());
+			var o = $("td:nth-of-type(2)").html();
+			var y = parseInt($("td:nth-of-type(3)").html());
+			
+			
+		})
+	})
+</script>
+</body>
+</html>
