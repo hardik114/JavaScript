@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Yahoo! Sign Up Page
+	</title>
+
+	  <link rel="shortcut icon" type="image/x-icon" href="Yahoo.ico" />
+</head>
+<body>
+		
+		<div style="height: 1000px;">
+				<div style="width: 350px; height: 570px; background-color: white; margin-left: 450px; border: 1px solid grey; border-style: outset;">
+
+					<p style="height: 5px;background: linear-gradient(to right, #0066ff, #000a1a); margin-top: 0px;"></p>
+
+					<p style="text-align: center; margin-top: 30px;"><font size="5">Sign up</font></p>
+
+					<input type="text" maxlength="32" name="lName" placeholder="Last Name" required="required" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: center; margin-right: 15px; font-size: 15px; width: 150px; margin-top: 15px; float: right;">
+
+					<input type="text" maxlength="32" name="fName" placeholder="First Name" required="required" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: center; margin-left: 15px; font-size: 15px; width: 150px; margin-top: 15px;">
+
+					<input onblur="checkMail()" onkeydown="removeError()" id="mail" type="email" required="required" maxlength="32" name="mail" placeholder="Email Address" required="required" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: left; margin-left: 15px; font-size: 15px; width: 165px; margin-top: 20px;padding-left: 37px;">
+
+					<input type="text" name="yahoo" placeholder="@yahoo.com" style="background-color: white; border-bottom: 1px solid grey;  border-top: none; border-left: none; border-right: none; width: 119px; font-size: 15px; margin-left: -4px; margin-bottom: 5px;" disabled>
+					<p id="mail1" style="text-decoration: none; font-size: 14px; color: red; margin-left: 50px; color: red; display: none; height: 25px;">You can only use letters, numbers, periods (‘.’), and underscores (‘_’) in your username.</p></br>
+
+					<a href="#" style="text-decoration: none; font-size: 14px; color: #0066ff; margin-left: 50px;">I'd rather use my own email address</a>
+
+					<input id="password" onblur="checkPassword()" onkeydown="lengthPassword()" type="password" required="required" maxlength="128" name="pWord" placeholder="Password" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: left; margin-left: 15px; font-size: 15px; width: 230px; margin-top: 15px;padding-left: 37px;">
+					
+					<a id="show1" onclick="show()" href="#" style="width: 55px; text-decoration: none; color: #0066ff; margin-top: 20px; border-bottom: 1px solid grey; margin-left: -3px;">show</a>
+
+					<p id="password1" style="text-decoration: none; font-size: 14px; color: red; margin-left: 50px; color: red; display: none; height: 25px;">Your password must have a digit or Uppercase latter or Lowercase or a special character.</p></br>
+
+					<p id="password2" style="text-decoration: none; font-size: 14px; color: red; margin-left: 50px; color: red; display: none; height: 25px;">Your password must be more than 5 character.</p></br>
+
+					<select name="countryCode" required="required" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: center; margin-left: 15px; font-size: 15px; width: 85px; margin-top: 20px;">
+						<option value="United States +1">+1</option>
+						<option value="+91">India (+91)</option>
+					</select>
+
+					<input id="num" onblur="number()" type="text" required="required" name="mPNumber" placeholder="Mobile Phone Number" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: left; margin-left: 15px; font-size: 15px; width: 185px; margin-top: 20px;padding-left: 37px;">
+
+					<select id="month" name="birthMonth" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: center; margin-left: 15px; font-size: 15px; width: 114px; margin-top: 20px;">
+						<option value="Birth Month">Birth Month</option>
+						<option value="January">January</option>
+						<option value="Febuary">Febuary</option>
+						<option value="March">March</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="August">August</option>
+						<option value="September">September</option>
+						<option value="October">October</option>
+						<option value="November">November</option>
+						<option value="December">December</option>
+					</select>
+
+					<input id="date" type="text" maxlength="2" name="birthDate" placeholder="Date" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: center; margin-left: 15px; font-size: 15px; width: 85px; margin-top: 20px;" required="required">
+
+					<input id="year" type="text" maxlength="4" name="birthYear" placeholder="Year" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: center; margin-left: 15px; font-size: 15px; width: 85px; margin-top: 20px;" required="required">
+
+					<select name="gender" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; padding-left: 15px; margin-left: 15px; font-size: 15px; width: 320px; margin-top: 20px; margin-bottom: 45px;">
+					<option value="Gender (optional)">Gender (Optional)</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+
+					<a onclick="monthDays()" href="#" style="color: white; border-radius: 5px; background-color: #0066ff; margin-left: 25px; margin-bottom: 35px; padding: 15px 120px 15px 120px; text-decoration: none;">Continue</a>
+
+					<p style="margin-top: 35px; text-align: center;">Already have an account? <a href="https://login.yahoo.com/?intl=us&lang=en-US&src=fpctx&specId=yidReg&done=https%3A%2F%2Fwww.yahoo.com&nr=1" style="text-decoration: none; color: #0066ff;">Sign in</a>
+					</p>
+
+					<p style="text-align: center; color: grey; margin-top: 45px;">I agree to the Yahoo <a href="https://policies.yahoo.com/us/en/yahoo/terms/directory/registration/index.htm" target="new1" style="text-decoration: none; color: #0066ff;">Terms</a> and <a href="https://policies.yahoo.com/us/en/yahoo/privacy/index.htm" target="new" style="text-decoration: none; color: #0066ff;">Privacy</a>.</p>
+
+				</div>
+	
+
+		</div>
+
+
+<script type="text/javascript">
+    function number(){
+    	var a = document.getElementById("num").value;
+    	if(isNaN(a)){
+    		alert("please enter number");
+    	}
+    }
+
+	function checkMail() {
+
+		var a = document.getElementById("mail").value;
+		var b = a.match(/(?=.*[@])(?=.*[.])/);
+		if(b != null){
+			document.getElementById("mail1").style.display = "inline";
+		}
+
+	}
+
+	function removeError(){
+		document.getElementById("mail1").style.display = "none";
+	}
+	function number() {
+  var s2 = document.getElementById("num").value;
+  var s3 = (""+s2).replace(/\D/g, '');
+  var m = s3.match(/^(\d{3})(\d{3})(\d{4})$/);
+  var k = ((!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3]);
+  console.log(k);
+  document.getElementById("num").value=k;
+}
+
+	function checkPassword(){
+		var c = document.getElementById("password").value;
+		var d = c.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])/);
+		if(d == null){
+			document.getElementById("password1").style.display = "inline";
+		}
+		else {
+		       document.getElementById("password1").style.display = "none";	
+		}
+	}
+
+	function lengthPassword(){
+		var c = document.getElementById("password").value;
+		if(c.length < 5){
+			document.getElementById("password2").style.display = "inline";
+		}
+		else {
+			document.getElementById("password2").style.display = "none";
+		}
+	}
+
+
+
+	function show(){
+        var k = document.getElementById("show1").innerHTML;
+		if(k == "show"){
+		document.getElementById("show1").innerHTML = "hide";
+		document.getElementById("password").type = "text";
+	}
+	else if(k == "hide"){
+		document.getElementById("show1").innerHTML = "show";
+		document.getElementById("password").type = "password";
+	}
+		
+	}
+
+		var n = document.getElementById("month").value;
+		var m = document.getElementById("year").innerHTML;
+		var p = document.getElementById("date").innerHTML;
+
+	function monthDays(){
+
+		if(n == "January" || "March"){
+			if(p > 31){
+				alert("Can not be more than 31.");
+			}
+		}
+		else if(n == "Febuary"){
+			
+			if(!isNaN(m)){
+				if(m % 4 == 0){
+					if(p > 29){
+						alert("Not more than 29.");
+					}
+				}
+				else {
+					if(p > 28){
+						alert("Not more than 28.");
+					}
+				}
+			}
+		}
+
+		else if(n == "April" || "June" || "September" || "November"){
+			if(p > 30){
+				alert("Not More than 30.");
+			}
+		}
+		else {
+			alert("Enter a valid Month");
+		}
+	}
+
+</script>
+
+</body>
+</html>

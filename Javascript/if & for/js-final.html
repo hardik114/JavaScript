@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div id="formdiv">
+
+	<form>
+		First Name: <input type="text" name="fname" id="fname" ><br><br>
+		Last Name: <input type="text" name="lname" id="lname" >	<br><br>
+		Gender: <input type="radio" name="gender" value="Male" id="male" onchange="genderValue()"> Male
+				<input type="radio" name="gender" value="Female" id="female" onchange="genderValue()"> Female<br><br>
+		State:<select name="State">
+					<option value="CA"> CA </option>
+					<option value="NY"> NY </option>
+					<option value="NJ"> NJ </option>
+					<option value="IL"> IL </option>
+			   </select><br><br>
+		<button onclick="mainfun()"> Save </button>
+		<button id="editbtn" onclick="editButton()" style="visibility: hidden;"> Edit </button>
+	</form>
+	
+</div><br>
+
+<div id="viewdiv">
+	<p id="Fname"> </p>
+	<p id="Lname"></p>
+	<p id="Gndr"> </p>
+	<p id="st"></p>
+</div>
+
+<script>
+	function mainfun() {
+		firstName();
+		lastName();
+		stateValue();
+		
+	}
+
+	function firstName() {
+		 var input = document.getElementById("fname")
+        var div = document.getElementById("Fname");
+        div.innerHTML = div.innerHTML + input.value;
+	}
+	function lastName() {
+		var input = document.getElementById("lname")
+        var div = document.getElementById("Lname");
+        div.innerHTML = div.innerHTML + input.value;
+	}
+	function genderValue() {
+		var input1 = document.getElementById("male");
+		var input2 = document.getElementById("female");
+		var div = document.getElementById("Gndr");
+		div.innerHTML = div.innerHTML + input.value;
+	}
+	function stateValue() {
+		var s = document.getElementsByName("State")[0];
+		var text = s.options[s.selectedIndex].text;
+		text.innerHTML = div.innerHTML + s.value;
+	}
+
+
+
+
+
+</script>
+</body>
+</html>

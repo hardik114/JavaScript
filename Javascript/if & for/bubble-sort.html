@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function bubblesrt() {
+		var k = [10, 6 ,5, 8 ,2];
+		var y;
+		do{
+			swapped = false;
+			for (var i = 0; i < k.length; i++) {
+				if (k[i] > k[i+1]) {
+					y = k[i];
+					k[i]=k[i+1];
+					k[i+1] = y;
+					swapped = true;
+				}
+			}
+		}while (swapped);
+		console.log(k);
+	}
+	bubblesrt();
+	
+</script>
+
+</body>
+</html>

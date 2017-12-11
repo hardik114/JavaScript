@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mouse Hover Effect
+	</title>
+</head>
+<body>
+	<div id="form">
+		<form>
+		    First Name: <input type="text" name="FirstName"  class="ip"/> <br><br>
+
+			Last Name:	<input type="text" name="LastName" class="ip"/>	<br><br>
+
+			Gender: <input type="radio" name="gender" class="ip" id="male"> Male
+					<input type="radio" name="gender" class="ip" id="female"> female<br><br>
+
+			State:  <select name="state" id="st" style="width: 50px;">
+						  <option value="State is not selected">ST</option>
+						  <option value="California">CA</option>
+						  <option value="New York">NY</option>
+						  <option value="New Jersey">NJ</option>
+						  <option value="Alabama">Al</option>
+					</select>
+			
+		</form>
+	</div>
+
+	<div id="view">
+
+			<p class="view1">First Name:</p><br>
+			<p class="view1">Last Name: </p><br>
+			<p class="view1">Gender: </p><br>
+			<p class="view1">State: </p>
+	</div>
+
+<button onclick="mainFun()"> Save </button>
+<button id="editButton" onclick="editBtnCall()" style="visibility: hidden;"> Edit </button>
+
+
+		<script>
+			function mainFun() {
+				for(var i = 0; i <= 1; i++){
+				document.getElementsByClassName("view1")[i].innerHTML = document.getElementsByClassName("ip")[i].value;
+				document.getElementsByClassName("ip")[i].value = "";
+				}
+
+				if(document.getElementById("male").checked == true){
+					document.getElementsByClassName("view1")[2].innerHTML = "Gender: Male";
+				}
+
+				else if(document.getElementById("female").checked == true){
+					document.getElementsByClassName("view1")[2].innerHTML = "Gender: Female";
+				}
+				else {
+					document.getElementsByClassName("view1")[2].innerHTML = "Gender: not selected";
+				}
+
+				document.getElementsByClassName("view1")[3].innerHTML = document.getElementById("st").value
+
+				document.getElementById("editButton").style.visibility = "visible";
+			}
+
+
+
+			function editBtnCall(){
+				for(var i = 0; i <= 1; i++){
+					document.getElementsByClassName("ip")[i].value = document.getElementsByClassName("view1")[i].innerHTML;
+					
+				}
+                document.getElementById("male").checked = false;
+                document.getElementById("male").checked = false;
+                document.getElementById("st").value = "";
+
+			}
+
+		</script>
+
+</body>
+</html>

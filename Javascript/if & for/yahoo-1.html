@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="main" style="height: 530px; border: 1px solid grey;width: 360px; margin: 0px auto" align="center">
+  
+<p id="para" style="color: grey; margin-left: 30px; text-align: center; font-size: 18px; margin-right: 30px;">Sign up</p>
+
+<input type="text" name="fname"  placeholder="First Name" id="fname" style="width: 150px;"> 
+<input type="text" name="lname"  placeholder="Last Name" id="lname" style="width: 150px;"> 
+
+<p id="fnpara" style=" color: red ; size: 8px; margin-top: 0px; margin-left: -200px;"></p>
+<p id="lnpara" style="color: red ; size: 8px; margin-top: -35px; margin-left: 110px;"> </p>
+
+<input type="text" name="email" placeholder="   Email address                     @yahoo.com" id="email" style="width: 308px; margin-top: 50px;">
+<p id="emailpara" style="color: skyblue ; size: 8px; margin-top: 0px; margin-left: 10px;"> I'd rather use my own email address</p>
+
+<input id="password" onblur="checkPassword()" onkeydown="lengthPassword()" type="password" required="required" maxlength="128" name="pWord" placeholder="Password" style="border-bottom: 1px solid grey; border-top: none; border-left: none; border-right: none; text-align: left; margin-left: 15px; font-size: 15px; width: 230px; margin-top: 15px;padding-left: 37px;">
+          
+  <a id="show1" onclick="show()" href="#" style="width: 55px; text-decoration: none; color: #0066ff; margin-top: 20px; border-bottom: 1px solid grey; margin-left: -3px;">show</a>
+
+  <p id="password1" style="text-decoration: none; font-size: 14px; color: red; margin-left: 50px; color: red; display: none; height: 25px;">Your password must have a digit or Uppercase latter or Lowercase or a special character.</p></br>
+
+  <p id="password2" style="text-decoration: none; font-size: 14px; color: red; margin-left: 50px; color: red; display: none; height: 25px;">Your password must be more than 5 character.</p></br>
+<select id="number" style="width: 40px; margin-left: 0px; margin-top: 0px;">
+              <option value="+1">+1</option>
+              <option value="+2">+2</option>
+              <option value="+3">+3</option>
+              <option value="+4">+4</option>
+              <option value="+5">+5</option>
+</select>
+
+<input type="text" onblur="number()" name="mobileNumber" placeholder="Mobile Number"  id="mobileNumber" style="width: 260px; margin-top: 0px;">
+<p id="mobilepara" style="visibility: hidden; color: red ; size: 8px; margin-top: 0px; margin-left: 10px;"> </p>
+      
+<select name="DOBMonth">
+  <option> Birth Moth </option>
+  <option value="January">January</option>
+  <option value="Febuary">Febuary</option>
+  <option value="March">March</option>
+  <option value="April">April</option>
+  <option value="May">May</option>
+  <option value="June">June</option>
+  <option value="July">July</option>
+  <option value="August">August</option>
+  <option value="September">September</option>
+  <option value="October">October</option>
+  <option value="November">November</option>
+  <option value="December">December</option>
+</select>
+<select name="DOBDay">
+  <option>  Day  </option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+
+<input type="number" name="Year" id="year" placeholder="Year" maxlength="4">
+<p id="bdaypara" style="visibility: hidden; color: red ; size: 8px; margin-top: 0px; margin-left: 10px;"> required</p>
+
+<select style="width: 308px;"">
+  <option>Gender (Optional)</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+
+<button style="width: 300px; margin-top: 10px;" onclick="mainFun()">Sign Up</button><br><br>
+
+Have an Account?<a href="log in" style="color: blue">Log in</a><br>
+
+<p id="lastpara" style="color: grey; margin-left: 30px; text-align: center; font-size: 18px; margin-right: 30px;">I agree to the Yahoo <a href="term" style="color: blue">Term</a>  & <a href="log in" style="color: blue">Privacy</a></p>
+
+<script>
+function mainFun() {
+  validatefirstname();
+  validatelastname();
+  validateemail();
+  validPassWord();
+  changenum();
+  number();
+}
+
+function validatefirstname() {
+  
+  var x = document.getElementById("fname").value;
+    if (x == "") {
+      document.getElementById("fnpara").innerHTML="required";
+   return false;
+    }
+    else if (isNaN(x)==false){
+         document.getElementById("fnpara").innerHTML="number not valid" ;
+        return false;
+    }
+
+}
+
+function validatelastname() {
+var y = document.getElementById("lname").value;
+if (y == "") {
+  document.getElementById("lnpara").innerHTML="required";
+   return false;
+    }
+    else if (!(isNaN(y))){
+         document.getElementById("lnpara").innerHTML="number not valid" ;
+        return false;
+    }
+}
+
+function validateemail() {
+  var pas=document.getElementById("email").value;
+  var p = pas.match(/[@.]/);
+
+    if (p==null) {
+      document.getElementById("emailpara").innerHTML="not valid" ;
+      return false;
+    }
+    
+}
+
+function checkPassword(){
+    var c = document.getElementById("password").value;
+    var d = c.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])/);
+    if(d == null){
+      document.getElementById("password1").style.display = "inline";
+    }
+    else {
+           document.getElementById("password1").style.display = "none"; 
+    }
+  }
+
+  function lengthPassword(){
+    var c = document.getElementById("password").value;
+    if(c.length < 5){
+      document.getElementById("password2").style.display = "inline";
+    }
+    else {
+      document.getElementById("password2").style.display = "none";
+    }
+  }
+
+
+
+  function show(){
+        var k = document.getElementById("show1").innerHTML;
+    if(k == "show"){
+    document.getElementById("show1").innerHTML = "hide";
+    document.getElementById("password").type = "text";
+  }
+  else if(k == "hide"){
+    document.getElementById("show1").innerHTML = "show";
+    document.getElementById("password").type = "password";
+  }
+    
+  }
+function changenum() {
+    var x = document.getElementById("mobileNumber").value;
+    if (x.length>10 || x.length<10) {
+     document.getElementById("mobilepara").style.visibility="visible";
+     return false;
+    }
+  }
+function number() {
+  var mob = document.getElementById("mobileNumber").value;
+  var mob2 = (""+mob).replace(/\D/g, '');
+  var m = mob2.match(/^(\d{3})(\d{3})(\d{4})$/);
+  var mn = ((!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3]);
+  console.log(mn);
+  document.getElementById("mobileNumber").value=mn;
+}
+
+</script>
+
+</div>
+</body>
+</html>

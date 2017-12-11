@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+    
+     <input id="in">
+
+     <button value="submit" onclick="myfunction()"> submit </button><br><br>
+
+     <p id="print"></p>
+
+     <script>
+
+     function myfunction(){
+
+     	var x = document.getElementById("in").value;
+
+     	if (x == "") {
+     		alert("Plese, Enter Something in the input box.");
+     		document.body.style.backgroundColor = "red";
+     	}
+
+     	else if (x.length > 15) {
+     		alert("No more than 15 characters.");
+     		return false;
+     	}
+
+     	else if (x<1 || x>5000) {
+     		alert("Please, Enter a number between 1 and 5000.");
+     		return false;
+     	}
+
+     	if (isNaN(x)) {
+     		strfunction();
+     	}
+     	if (isNaN(x)==false) {
+     		numfunction();
+     	}
+
+
+     }
+
+     function strfunction(){
+           var x = document.getElementById("in").value;
+
+            var seen = {};
+            var rearr = [];
+
+             for (var i = 0; i < x.length; i++) {
+
+                              if (!(x[i] in seen)) {
+
+                                       rearr.push(x[i]);
+                                       seen[x[i]] = true;
+        }
+    }
+
+    
+
+    
+           document.getElementById("print").innerHTML = rearr.sort();
+     }
+
+     
+     function numfunction(){
+     	var x = document.getElementById("in").value;
+        var isprime = true;
+
+        for(var i=2; i<x-1; i++){
+
+        	if (x % i == 0) {
+        		isprime = false;
+        	}
+             
+        }
+
+        if (isprime != false) {
+
+        	document.getElementById("print").innerHTML = x;
+        }
+
+        else {
+        	document.getElementById("print").innerHTML = "The Number is not Prime.";
+        }
+
+     }
+
+
+    
+
+     </script>
+
+
+</body>
+</html>

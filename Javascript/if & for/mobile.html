@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="changenum()">submit</button>
+<script>
+	function changenum() {
+		var x = document.getElementById("num").value;
+		if (x.length>10 || x.length<10) {
+			alert("not valid");
+		}
+		else{
+			alert("true");
+		}
+	}
+</script>
+
+</body>
+</html>

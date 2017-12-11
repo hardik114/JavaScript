@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var random = Math.floor(Math.random()* 500);
+
+		function myfunc(){
+				var i = 20;
+				while (i >0) {
+					var num = prompt("enter your number");
+
+				if (random > num) {
+				alert("number is small so input a large number");
+				i--;
+				}
+				else if (random < num) {
+				alert("number is large so input a small number");
+				i--;
+				}
+				else if (random = num) {
+				alert("congratulation guess is true");
+				break;
+				}
+				else if (i<0){
+				alert("you did maximum tries.");
+				}
+			}
+
+		}
+
+		myfunc();
+
+	</script>
+
+</body>
+</html>

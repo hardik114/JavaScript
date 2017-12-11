@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form>
+	<select id="state">
+		<option value="-1" selected="selected"> state </option>
+		<option value="1"> CA </option>
+		<option value="2"> NY </option>
+		<option value="3"> NJ </option>
+		<option value="4"> IL </option>
+	</select>
+	<button onclick="formState()">Submit</button>
+</form> 
+<script>
+function formState() {
+	select = document.getElementById("state"); 
+if (select.value==-1) {
+ alert("please select state");
+  return true;
+}
+
+return false;
+	
+}
+	
+</script>
+</body>
+</html>

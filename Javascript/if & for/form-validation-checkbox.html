@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form>
+	<input type="checkbox" name="accept" value="accept" id="accept"> Accept <br>
+	<button onclick="formAccept()">Submit</button>
+</form>
+<script>
+	function formAccept() {
+  if(!document.getElementById('accept').checked){
+            alert('Checkbox not checked');
+            return false;
+}
+	}
+</script>
+
+</body>
+</html>

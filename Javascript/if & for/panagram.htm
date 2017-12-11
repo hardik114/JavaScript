@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function pangram() {
+		var x="abcdefghklmnopqrstuvwxyz";
+		var regex=/(?=.*a)(?=.*b)(?=.*c)(?=.*d)(?=.*e)(?=.*f)(?=.*g)(?=.*h)(?=.*i)(?=.*j)(?=.*k)(?=.*l)(?=.*m)(?=.*n)(?=.*o)(?=.*p)(?=.*q)(?=.*r)(?=.*s)(?=.*t)(?=.*u)(?=.*v)(?=.*w)(?=.*x)(?=.*y)(?=.*z)./;
+		var y=x.match(regex);
+		if (y!=null) {
+			alert("pangram");
+		}
+		else{
+			alert("not pangram");
+		}
+	}
+	pangram()
+</script>
+</body>
+</html>

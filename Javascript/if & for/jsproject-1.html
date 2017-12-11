@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<input type="text" name="input" id="input">
+<button onclick ="myfunction()"> Click </button>
+<p id="print"></p>
+
+<script>
+function myfunction() {
+	var ip = document.getElementById("input").value;
+
+	if (ip=="") {
+		document.body.style.backgroundColor = "red";
+		alert("enter something.!!");
+		return false;
+
+	}
+	
+		else if(ip.length > 9){
+``
+				alert("no longer then 8 charecters.!!");
+				return false;
+			}
+		else if (ip<1 || ip>1000) {
+				
+			alert("enter number between 1 to 1000.!!");
+			return false;
+			}
+			
+			else if (isNaN(ip)) {
+		
+			strfunction();
+				
+		}
+		else{
+			numfuction();
+		}
+
+		function strfunction(){
+           var ip = document.getElementById("input").value;
+
+            var seen = {};
+            var newarr = [];
+
+             for (var i = 0; i < ip.length; i++) {
+
+                              if (!(ip[i] in seen)) {
+
+                                       newarr.push(ip[i]);
+                                       seen[ip[i]] = true;
+        }
+				}
+				var y;
+		do{
+			swapped = false;
+			for (var i = 0; i < newarr.length; i++) {
+				if (newarr[i] > newarr[i+1]) {
+					y = newarr[i];
+					newarr[i]=newarr[i+1];
+					newarr[i+1] = y;
+					swapped = true;
+				}
+			}
+		}while (swapped);
+	
+
+
+			document.getElementById("print").innerHTML = newarr;
+	}
+	function numfuction() {
+		 var ip = document.getElementById("input").value;
+		
+	
+		var prime = true;
+	for (var i = 2; i < ip-1 ; i++) {
+		
+		if (ip % i == 0) {
+			prime = false;
+		}
+		}
+		if (prime != false) {
+			document.getElementById("print").innerHTML = ip;
+		}
+		else{
+			document.getElementById("print").innerHTML = "This is not prime number"
+		}
+
+	}	
+
+}
+
+</script>
+</body>
+</html>

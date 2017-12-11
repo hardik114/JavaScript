@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form name="feedback" action="#" method=post>
+Your Gender: <input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+
+<button onclick=" ValidateFormGender(form)"> Submit </button>
+
+</form> 
+
+<script>
+function ValidateFormGender(form){
+ErrorText= "";
+if ( ( !document.getElementById('accept').checked == false ) && ( !document.getElementById('accept').checked == false ) ) 
+{
+alert ( "Please choose your Gender: Male or Female" ); 
+return false;
+}
+if (ErrorText= "") { form.submit() }
+}
+	
+</script>
+
+</body>
+</html>

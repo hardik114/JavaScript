@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="add()"> increment </button>
+	<button onclick="sub()"> decrement </button>
+	<button  onclick="mul()"> cal </button>
+
+	<script type="text/javascript">
+	var a= 10, b = 6;
+		function sub() {
+			a = a - 1;
+			b = b - 1;
+			alert("run a "+ a)
+			alert("run b "+ b)
+			alert("sub a & b " + (a-b))
+		}
+		function add() {
+			a = a + 1;
+			b = b + 1;
+			alert("run a "+ a)
+			alert("run b "+ b)
+			alert("addition a & b " + (a+b))
+		}
+		function mul(){
+			alert("add a & b"+ (a+b) + " sub a & b"+ (a-b) + " devide a & b " + (a/b) + " multiply a & b " + (a*b)+ " moduls a & b "+ (a%b));
+			
+		}
+		
+	</script>
+
+</body>
+</html>

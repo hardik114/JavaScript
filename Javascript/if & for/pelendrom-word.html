@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" name="tax" id="peraword">
+<button onclick="perendom()"> Submit </button>
+<script>
+	function perendom() {
+		
+		var ip = document.getElementById("peraword").value;
+				j = ip.length;
+		for (var i = 0; i < j/2 ; i++) {
+
+				if (ip[i] != ip[j-1-i]) {
+					alert("word is not palindrome")
+					return false;
+				}
+				alert("Word is a palindrome");
+				return true;	
+			}	
+	}
+	
+</script>
+
+</body>
+</html>

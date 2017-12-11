@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+//constant
+{
+	const pi= 3.14;
+	//pi=4;
+	console.log(pi)
+
+//block function let
+
+	let x=[6,8,91,5,41];
+	for (let i = 0; i < x.length; i++) {
+		let y=x[i]
+		console.log(y);
+	}
+	//console.log(y);
+
+	function block() {
+		function b1() { let a =10;
+		console.log(a);	}
+		
+		b1();
+		{
+			function b2() { let a=5	;
+			console.log(a);	}
+			
+			b2();
+		}
+		b1();
+	}
+	block();
+
+//Arrow function
+
+	
+	let area= r => pi*r*r;
+	console.log(area(7));
+	let arr=[];
+	let arr1=[];
+	let ar=x.map(i=>{return i/2});//map change in same array
+	console.log(ar);
+	let arrrr= x.filter(i=>{return i*2});// filter change value in same array
+	console.log(arrrr);
+	let arrr=x.forEach(i=>{if (i>10) {arr1.push(i)}});// for each can not change in that array we have to create new arr
+	console.log(arr1);
+
+//Reduce
+
+var array=[10,12,13,14].reduce(function (sum,val) {
+	return sum + val;},0)
+console.log(array);
+var s=x.reduce((k,l)=>{ return k + l;},0);// using Arrow Function
+console.log(s);
+
+//Extended Parameter Handaling
+
+function sum(x, y = 7, z = 42) {
+    return x + y + z
+}
+console.log(sum(4)); //sum=53
+
+//Rest Parameter 
+function sum2(x,y,...z) {
+	return (x+y)*z.length;
+}console.log(sum2(1,2,3,8,10,12,12,12));
+
+//Spread Operator
+
+let params = [ "hi", "How" , "are", "you?"]
+let other = [ "Dhruvang", ...params ]
+console.log(other);
+
+//String Interpolation
+
+console.log(`Dhruvang ${params[0]} ${params[1]} ${params[2]} ${params[3]}
+	I am Fine.`);
+}
+//class defination
+{
+class person{
+	constructor (name, height, weight){
+		this.name= name;
+		this.height=height;
+		this.weight=weight;
+	}
+	displayName(){
+		console.log(`My name is ${this.name}`)
+	}
+	displayHeight(){
+		console.log(this.height)
+	}
+	
+}
+class pre extends person {
+    constructor (name, height, weight,lang, age) {
+    	super(name, height, weight)
+        this.lang = lang;
+        this.age = age;
+    }
+    displayLang(){
+    	console.log(this.lang)
+    }
+}
+let john= new pre("John", 6.8, 144.9, "English", 49);
+john.displayLang();
+john.displayName();
+john.displayHeight();
+}
+
+//For.. of
+
+function myfun(arg) {
+	for (let n of arg){
+	    if(n>10){console.log(n);}
+		}
+}
+myfun([10,12,1,3,5,51,23,222,]);
+
+// Getter Setter
+
+class getThings{
+	constructor(height,width){
+		this.height=height;
+		this.width=width;
+	}
+	get RectengularSize(){
+		return this.height;
+		return this.width;
+	}
+	get area(){return this.width * this.height;}
+	set h(height){this.height=height;}
+	set w(width){this.width=width;}
+}
+let size= new getThings(10,15);
+console.log(size.area);
+size.height=2;
+size.width=5;
+console.log(size.area);
+
+</script>
+</body>
+</html>

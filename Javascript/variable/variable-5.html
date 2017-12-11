@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" name="pre1" id="demo1">
+<input type="text" name="pre2" id="demo2">
+<br>
+<button onclick="sum()"> sum</button>
+<button onclick="mul()"> multiplication</button>
+<button onclick="mod()"> module </button>
+
+<script type="text/javascript">
+var r1, r2, r3;
+	/*function all() {
+		var pre1 = Number(document.getElementById("demo1").value);
+		var pre2 = Number(document.getElementById("demo2").value);
+	}*/
+	function sum() {
+		var pre1 = Number(document.getElementById("demo1").value);
+		var pre2 = Number(document.getElementById("demo2").value);
+		r1 = pre1 + pre2;
+		alert("result of sum "+r1);
+	}
+	function mul() {
+		var pre1 = Number(document.getElementById("demo1").value);
+		var pre2 = Number(document.getElementById("demo2").value);
+		r2 = pre1 * pre2;
+		alert("result of mul "+r2);
+	}
+	function mod() {
+		var pre1 = Number(document.getElementById("demo1").value);
+		var pre2 = Number(document.getElementById("demo2").value);
+		r3 = pre1 % pre2;
+		alert("result of modu "+r3);
+	}
+
+
+</script>
+
+</body>
+</html>

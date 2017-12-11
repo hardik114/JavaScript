@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="radio" value="Number" id="number" >Number<br>
+<input type="radio" value="Upper" id="upper">upper case<br>
+<input type="radio" value="Special" id="special">special char<br><br>
+
+password: <input type="text" id="pass" onkeyup="password()">
+
+<script>
+	
+	function password() {
+		var x = document.getElementById("pass").value;
+			var y=x.match(/[0-9]/);
+         if (y!=null) {
+         	
+			document.getElementById("number").checked=true;
+		}
+         else{
+document.getElementById("number").checked=false;
+
+         }
+}
+			/*
+		if (y) {
+			num= !num;
+			document.getElementById("number").checked=true;
+		}
+		else if (){
+			up = !up;
+			document.getElementById("upper").checked=true;
+		}
+		else if (){
+			sp = !sp;
+			document.getElementById("special").checked=true;
+		}
+	}
+	*/
+</script>
+
+</body>
+</html>

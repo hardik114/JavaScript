@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		EXp ES6
+	</title>
+</head>
+<body>
+
+<input type="text" name="input1" id="input1"/>
+<button onclick="inputEx()">Submit</button>
+<script type="text/javascript">
+function inputEx(){
+var a = document.getElementById("input1").value;
+for (var i = 0; i < a.length; i++){
+	//console.log(a[i]);
+}
+
+var arr = [];
+arr[0] = "(";
+arr[4] = ")";
+arr[8] = "-";
+
+console.log(arr);
+
+for (var k = 1; k <= 15; k++) {
+	var a = document.getElementById("input1").value;
+	arr[k] = a[k-1];
+	if(k == 4){
+		continue;
+	}
+	if(k == 8){
+		continue;
+	}
+
+}
+console.log(arr);
+}
+	
+
+
+
+</script>
+</body>
+</html>

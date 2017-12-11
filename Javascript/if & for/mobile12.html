@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+
+<input type="text" name="mobileNumber" placeholder="Mobile Number*"  id="mobileNumber" style="width: 260px; margin-top: 0px;">
+<p id="mobilepara" style="visibility: hidden; color: red ; size: 8px; margin-top: 0px; margin-left: 10px;"> required</p>
+<button onclick="myFunction()">Try it</button>
+
+
+<script>
+  
+  
+function myFunction() {
+  var s2 = document.getElementById("mobileNumber").value;
+  var s3 = (""+s2).replace(/\D/g, '');
+  var m = s3.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  var k = ((!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3]);
+  console.log(k);
+  document.getElementById("mobileNumber").value=k;
+}
+</script>
+</body>
+</html>

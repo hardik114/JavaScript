@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+	var random = Math.floor(Math.random()* 500);
+
+		function myfun(){
+
+		var num = prompt("enter your number");
+
+		while (var i = 0; i < 20; i++) {
+
+			if (random > num) {
+			alert("number is small so input a large number");
+			i++;
+			}
+			else if (random < num) {
+			alert("number is large so input a small number");
+			i++;
+			}
+			else if (random = num) {
+			alert("congratulation guess is true");
+			break;
+			}
+		}
+	}
+
+	myfun();
+
+</script>
+</body>
+</html>
