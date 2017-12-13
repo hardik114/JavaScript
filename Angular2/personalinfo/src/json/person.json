@@ -1,0 +1,21 @@
+{
+   "person": [{
+       "name":"hardik"
+       ,"age":"25",
+       "salary":"70000",
+       "position":"engineer"
+    },
+    {
+        "name":"krunal",
+        "age":"27",
+        "salary":"80000",
+        "position":"Devloper"
+    },
+    {
+        "name":"pratik",
+        "age":"22",
+        "salary":"50000",
+        "position":"doctor"
+    }
+]
+}

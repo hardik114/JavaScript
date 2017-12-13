@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ <h1>    Welcome to {{title}}!</h1>
+  <div [hidden]="Hi" 
+  [style.backgroundColor]="clr?'red':'green'" 
+  [style.borderRadius]="rad?'50%':'0%'"
+  [style.height]="h?'400px':'200px'"
+  [style.width]="w?'400px':'200px'"></div><br>
+  <button (click)="colorChange()"> Change color</button>
+  <button (click)="hide()"> Hide </button>
+  <button (click)="show()"> Show </button>
+  <button (click)="toggle()"> Toggle </button>
+  <button (click)="crcl()"> Circle </button>
+  <button (click)="squr()"> Square </button>
+  <button (click)="Dsize()"> Double Siza </button>
+  <button (click)="original()"> Original </button><br><br>
+
+ 
+-----------------------------------------------------------------------------------------------<br><br>
+<h1> Calculator </h1>
+Number 1: <input #num1 type="number" (keyup)="onKey($event)"><br><br>
+Number 2: <input #num2 type="number " (keyup)="onKey1($event)"><br><br>
+
+<button #b1 (click)="xyz(b1.value)" value="+"> + </button>
+<button #b2 (click)="xyz(b2.value)" value="-"> - </button>
+<button #b3 (click)="xyz(b3.value)" value="*"> * </button>
+<button #b4 (click)="xyz(b4.value)" value="/"> / </button>
+<button #b5 (click)="xyz(b5.value)" value="%"> % </button>
+<h4> Result  : {{result}}</h4>
+
+
+-----------------------------------------------------------------------------------------------------<br><br>
+<div id="tsignal">
+
+<div class="rnd" [style.backgroundColor]="rd?'red':'white'"></div>
+<div class="rnd" [style.backgroundColor]="yl?'yellow':'white'"></div>
+<div class="rnd" [style.backgroundColor]="gn?'green':'white'"></div>
+</div><br>
+<button (click)= "rfun()"> Red </button>
+<button (click)= "yfun()"> Yellow </button>
+<button (click)= "gfun()"> Green </button><br>
+
+
+
